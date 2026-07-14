@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الرياض وحائل | Riyadh & Hail</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .font-ar { font-family: 'Tajawal', sans-serif; }
+        .font-en { font-family: 'Playfair Display', serif; }
+        .paper-bg { background: #ffffff; background-image: radial-gradient(#e2e8f0 0.5px, transparent 0.5px); background-size: 24px 24px; }
+        .lang-section { display: none; }
+        .active { display: block; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- شريط التبديل -->
+    <div class="fixed top-6 right-6 z-50 flex gap-2">
+        <button onclick="switchLang('ar')" class="bg-white px-4 py-2 rounded-full shadow-lg border border-emerald-600 text-emerald-700 font-bold">العربية</button>
+        <button onclick="switchLang('en')" class="bg-white px-4 py-2 rounded-full shadow-lg border border-slate-600 text-slate-700 font-bold">English</button>
+    </div>
+
+    <main class="max-w-4xl mx-auto px-6 py-16">
+        
+        <!-- النسخة العربية -->
+        <article id="ar-version" class="lang-section active paper-bg shadow-2xl rounded-[3rem] p-10 border border-slate-200 font-ar">
+            <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-8 leading-tight">الرياض وحائل وجهتا سياحة وتنمية اقتصادية</h1>
+            <div class="flex flex-col md:flex-row gap-8 items-start mb-10">
+                <img src="image.png" alt="عادل السويدي" class="w-48 rounded-2xl shadow-lg">
+                <div>
+                    <p class="text-2xl font-bold text-emerald-900 mb-4">لم تعد التنمية الاقتصادية في المملكة تقاس بالأرقام وحدها، بل بصناعة تجربة إنسانية متكاملة.</p>
+                    <p class="text-lg text-slate-600">أسهمت رؤية 2030 في إعادة صياغة مفهوم التنمية لتصبح الرياض نموذجاً عالمياً، وتبرز حائل كوجهة واعدة تجمع بين الأصالة والتطور.</p>
+                </div>
+            </div>
+            <p class="text-lg">ما يحدث اليوم هو تحول اقتصادي واجتماعي شامل يعكس طموح القيادة في الاستثمار في الإنسان، لتبقى التنمية المستدامة محور هذا التحول التاريخي.</p>
+        </article>
+
+        <!-- النسخة الإنجليزية -->
+        <article id="en-version" class="lang-section paper-bg shadow-2xl rounded-[3rem] p-10 border border-slate-200 font-en">
+            <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-8 leading-tight">Riyadh & Hail: Tourism and Economic Development Destinations</h1>
+            <div class="flex flex-col md:flex-row gap-8 items-start mb-10">
+                <img src="image.png" alt="Adel Al-Suwaidi" class="w-48 rounded-2xl shadow-lg">
+                <div>
+                    <p class="text-2xl font-bold text-slate-800 mb-4">Economic development in Saudi Arabia is no longer measured by numbers alone, but by the creation of a comprehensive human experience.</p>
+                    <p class="text-lg text-slate-600">Vision 2030 has reshaped development, making Riyadh a global model for the future and positioning Hail as a promising destination blending authenticity with progress.</p>
+                </div>
+            </div>
+            <p class="text-lg">What we are witnessing today is a comprehensive economic and social transformation that reflects the leadership's ambition to invest in people, keeping sustainable development at the heart of this historical change.</p>
+        </article>
+    </main>
+
+    <script>
+        function switchLang(lang) {
+            document.querySelectorAll('.lang-section').forEach(el => el.classList.remove('active'));
+            document.getElementById(lang + '-version').classList.add('active');
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            document.documentElement.lang = lang;
+        }
+    </script>
+</body>
+</html>
+
